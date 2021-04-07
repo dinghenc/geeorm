@@ -1,7 +1,6 @@
 package clause
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -43,5 +42,5 @@ func (c *Clause) Build(orders ...Type) (string, []interface{}) {
 			vars = append(vars, c.sqlVars[order]...)
 		}
 	}
-	return fmt.Sprintf("%s", strings.Join(sqls, " ")), vars
+	return strings.Join(sqls, " "), vars
 }
